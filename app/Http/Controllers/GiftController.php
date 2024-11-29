@@ -63,6 +63,12 @@ class GiftController extends Controller
      */
     public function update(Request $request, Gift $gift)
     {
+        $request->validate([
+            'name' => 'required',
+        ], [
+            'name.required' => 'Nome é obrigatório!',
+        ]);
+
         $gift->update($request->all());
         return redirect()->route('gifts.index');
     }

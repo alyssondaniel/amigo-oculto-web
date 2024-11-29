@@ -38,7 +38,6 @@ const showingNavigationDropdown = ref(false);
                                     Dashboard
                                 </NavLink>
                             </div>
-                            <!-- Navigation Links -->
                             <div
                                 class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
                             >
@@ -47,6 +46,16 @@ const showingNavigationDropdown = ref(false);
                                     :active="route().current('gifts.index')"
                                 >
                                     Presentes
+                                </NavLink>
+                            </div>
+                            <div
+                                class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
+                            >
+                                <NavLink
+                                    :href="route('groups.index')"
+                                    :active="route().current('groups.index')"
+                                >
+                                    Grupos
                                 </NavLink>
                             </div>
                         </div>

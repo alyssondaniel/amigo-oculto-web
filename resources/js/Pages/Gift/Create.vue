@@ -6,6 +6,7 @@ import TextInput from "@/Components/TextInput.vue";
 import InputLabel from "@/Components/InputLabel.vue";
 import InputError from "@/Components/InputError.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
+import TextAreaInput from "@/Components/TextAreaInput.vue";
 
 const nameInput = ref(null);
 const props = defineProps({
@@ -60,7 +61,7 @@ onMounted(() => {
                     <InputError :message="form.errors.name" class="mt-2" />
 
                     <InputLabel for="description" value="Descrição" />
-                    <TextInput
+                    <TextAreaInput
                         id="description"
                         ref="descriptionInput"
                         v-model="form.description"

@@ -54,4 +54,26 @@ class User extends Authenticatable
     {
         return $this->hasMany(Gift::class);
     }
+
+    /**
+     * Get the user's gifts.
+     */
+    public function groups(): HasMany
+    {
+        return $this->hasMany(Group::class);
+    }
+
+    /**
+
+     * The groups that belong to the user.
+
+     */
+
+    public function groupUsers()
+
+    {
+
+        return $this->belongsToMany(Group::class, 'group_users')
+            ->withPivot('accepted_invite');
+    }
 }
